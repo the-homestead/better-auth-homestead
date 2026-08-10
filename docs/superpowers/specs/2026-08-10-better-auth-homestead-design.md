@@ -12,7 +12,6 @@
 - Initial package names: `@itzdabbzz/better-auth-steam` and `@itzdabbzz/better-auth-cfx`
 - License: MIT
 - Project-facing branding: Homestead
-- No generated-by, Codex, or OpenAI attribution is added to source, documentation, commits, or package metadata.
 
 ## Architecture
 
