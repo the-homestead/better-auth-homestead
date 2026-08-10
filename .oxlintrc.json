@@ -1,0 +1,12 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "categories": {
+    "correctness": "error",
+    "perf": "warn",
+    "suspicious": "warn"
+  },
+  "ignorePatterns": ["**/dist/**", "templates/**"],
+  "options": {
+    "typeAware": true
+  }
+}

@@ -13,6 +13,7 @@
 ### Task 1: Root workspace and toolchain
 
 **Files:**
+
 - Create: `package.json`
 - Create: `tsconfig.json`
 - Create: `tsconfig.build.json`
@@ -34,6 +35,7 @@
 ### Task 2: Plugin generator using TDD
 
 **Files:**
+
 - Create: `scripts/create-plugin.test.ts`
 - Create: `scripts/create-plugin.ts`
 - Create: `templates/plugin/package.json.tpl`
@@ -53,6 +55,7 @@
 ### Task 3: Initial plugin workspaces and Better Auth integration tests
 
 **Files:**
+
 - Create: `packages/steam/package.json`
 - Create: `packages/steam/tsconfig.json`
 - Create: `packages/steam/src/index.ts`
@@ -79,6 +82,7 @@
 ### Task 4: Release safeguards and package inspection
 
 **Files:**
+
 - Create: `.changeset/config.json`
 - Create: `.changeset/README.md`
 - Create: `scripts/check-packages.ts`
@@ -96,6 +100,7 @@
 ### Task 5: GitHub automation and repository documentation
 
 **Files:**
+
 - Create: `.github/workflows/ci.yml`
 - Create: `.github/workflows/release.yml`
 - Create: `.github/CODEOWNERS`
@@ -123,6 +128,7 @@
 ### Task 6: Complete verification
 
 **Files:**
+
 - Modify only files revealed by verification failures.
 
 - [ ] Run `bun install --frozen-lockfile`.
