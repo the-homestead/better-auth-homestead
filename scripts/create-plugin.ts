@@ -46,7 +46,7 @@ async function listTemplateFiles(directory: string, base = directory): Promise<s
     }),
   );
 
-  return files.flat().sort();
+  return files.flat().toSorted();
 }
 
 function renderTemplate(content: string, tokens: Readonly<Record<string, string>>): string {
@@ -97,11 +97,13 @@ export async function createPlugin(options: CreatePluginOptions): Promise<Create
   );
 
   try {
-    for (const file of renderedFiles) {
-      const outputFile = join(destination, file.outputPath);
-      await mkdir(dirname(outputFile), { recursive: true });
-      await writeFile(outputFile, file.content, { encoding: "utf8", flag: "wx" });
-    }
+    await Promise.all(
+      renderedFiles.map(async (file) => {
+        const outputFile = join(destination, file.outputPath);
+        await mkdir(dirname(outputFile), { recursive: true });
+        await writeFile(outputFile, file.content, { encoding: "utf8", flag: "wx" });
+      }),
+    );
   } catch (error) {
     if (basename(destination) === options.name && destination.startsWith(`${packagesDir}${sep}`)) {
       await rm(destination, { force: true, recursive: true });

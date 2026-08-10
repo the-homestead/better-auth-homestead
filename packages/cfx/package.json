@@ -1,32 +1,35 @@
 {
-  "name": "{{PLUGIN_PACKAGE_NAME}}",
+  "name": "@itzdabbzz/better-auth-cfx",
   "version": "0.0.0",
   "private": true,
-  "description": "{{PLUGIN_DESCRIPTION}}",
-  "author": "ItzDabbzz <itzdabbzz@gmail.com>",
-  "license": "MIT",
-  "type": "module",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/the-homestead/better-auth-homestead.git",
-    "directory": "packages/{{PLUGIN_NAME}}"
-  },
-  "homepage": "https://github.com/the-homestead/better-auth-homestead/tree/main/packages/{{PLUGIN_NAME}}#readme",
+  "description": "A Better Auth Cfx plugin from Homestead.",
+  "keywords": [
+    "authentication",
+    "better-auth",
+    "cfx",
+    "homestead"
+  ],
+  "homepage": "https://github.com/the-homestead/better-auth-homestead/tree/main/packages/cfx#readme",
   "bugs": {
     "url": "https://github.com/the-homestead/better-auth-homestead/issues"
   },
-  "keywords": [
-    "better-auth",
-    "authentication",
-    "{{PLUGIN_NAME}}",
-    "homestead"
-  ],
+  "license": "MIT",
+  "author": "ItzDabbzz <itzdabbzz@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-homestead/better-auth-homestead.git",
+    "directory": "packages/cfx"
+  },
   "files": [
     "dist",
     "CHANGELOG.md",
     "LICENSE",
     "README.md"
   ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "bun": "./src/index.ts",
@@ -34,23 +37,20 @@
       "import": "./dist/index.js"
     }
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "scripts": {
     "build": "bun run clean && tsc -p tsconfig.json",
     "clean": "bun -e \"import { rm } from 'node:fs/promises'; await rm('dist', { force: true, recursive: true });\"",
     "test": "bun test",
     "typecheck": "tsc --noEmit -p tsconfig.json"
   },
-  "peerDependencies": {
-    "better-auth": ">=1.6.0 <2"
-  },
   "devDependencies": {
     "@itzdabbzz/better-auth-plugin-kit": "workspace:*"
   },
-  "publishConfig": {
-    "access": "public",
-    "provenance": true
+  "peerDependencies": {
+    "better-auth": ">=1.6.0 <2"
   }
 }

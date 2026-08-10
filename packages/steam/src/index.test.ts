@@ -1,15 +1,15 @@
 import { describe, expect, test } from "bun:test";
 import { createPluginTestInstance } from "@itzdabbzz/better-auth-plugin-kit";
 
-import { {{PLUGIN_FUNCTION_NAME}} } from "./index.ts";
+import { steam } from "./index.ts";
 
-describe("{{PLUGIN_FUNCTION_NAME}}", () => {
+describe("steam", () => {
   test("exposes a stable Better Auth plugin id", () => {
-    expect({{PLUGIN_FUNCTION_NAME}}().id).toBe("{{PLUGIN_NAME}}");
+    expect(steam().id).toBe("steam");
   });
 
   test("installs in a Better Auth test instance", async () => {
-    const plugin = {{PLUGIN_FUNCTION_NAME}}();
+    const plugin = steam();
     const instance = await createPluginTestInstance(plugin);
 
     try {

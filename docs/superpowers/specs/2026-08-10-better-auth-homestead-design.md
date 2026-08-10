@@ -48,7 +48,7 @@ The initial Steam and Cfx.re source files expose minimal Better Auth plugin fact
 
 ## Testing and verification
 
-Tests use Bun's test runner. Better Auth integration tests use its official `getTestInstance()` harness with an isolated SQLite database and real Better Auth instances. External provider HTTP calls are mocked only at the network boundary.
+Tests use Bun's test runner. Better Auth integration tests use its official `testUtils()` plugin with Bun's in-memory SQLite database and real Better Auth instances. A private plugin-kit workspace owns this Bun-compatible harness because Better Auth's `getTestInstance()` currently imports Node's `node:sqlite`, which Bun does not provide. External provider HTTP calls are mocked only at the network boundary.
 
 The initial scaffold verifies plugin identity, Better Auth installation, package exports, generator validation, template substitution, and collision protection. Provider implementations must later cover callback success, provider rejection, malformed profiles, missing identifiers, account linking, and type compatibility.
 

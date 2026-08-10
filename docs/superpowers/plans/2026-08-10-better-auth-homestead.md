@@ -6,7 +6,7 @@
 
 **Architecture:** A private Bun workspace owns plugin packages, shared tooling, an unpublished template, and a tested generator. TypeScript 7 emits ESM libraries, Better Auth's test harness verifies plugin integration, Oxc enforces source quality, and Changesets plus GitHub Actions handle independent releases.
 
-**Tech Stack:** Bun 1.3, TypeScript 7, Better Auth 1.6, `@better-auth/test-utils`, Oxlint, Oxfmt, Changesets, Commitlint, Husky, GitHub Actions.
+**Tech Stack:** Bun 1.3, TypeScript 7, Better Auth 1.6 test utilities, Oxlint, Oxfmt, Changesets, Commitlint, Husky, GitHub Actions.
 
 ---
 
@@ -72,7 +72,7 @@
 - Create: `packages/plugin-kit/tsconfig.json`
 - Create: `packages/plugin-kit/src/index.ts`
 
-- [ ] Write failing package contract tests for stable plugin IDs and Better Auth installation through `getTestInstance()`.
+- [ ] Write failing package contract tests for stable plugin IDs and Better Auth installation through the official `testUtils()` plugin.
 - [ ] Generate the Steam and Cfx.re package structures using the tested generator.
 - [ ] Implement minimal typed plugin factories returning `BetterAuthPlugin` objects.
 - [ ] Add private package manifests with final npm names, explicit export maps, Better Auth peer dependencies, and publish allowlists.

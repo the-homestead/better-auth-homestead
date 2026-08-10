@@ -1,0 +1,27 @@
+{
+  "name": "@itzdabbzz/better-auth-plugin-kit",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Private development utilities for Homestead Better Auth plugins.",
+  "license": "MIT",
+  "author": "ItzDabbzz <itzdabbzz@gmail.com>",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "bun": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "bun run clean && tsc -p tsconfig.json",
+    "clean": "bun -e \"import { rm } from 'node:fs/promises'; await rm('dist', { force: true, recursive: true });\"",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "better-auth": "1.6.26"
+  }
+}
