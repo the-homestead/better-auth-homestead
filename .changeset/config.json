@@ -1,0 +1,18 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@3.1.2/schema.json",
+  "changelog": [
+    "@changesets/changelog-github",
+    {
+      "repo": "the-homestead/better-auth-homestead"
+    }
+  ],
+  "commit": false,
+  "access": "public",
+  "baseBranch": "main",
+  "updateInternalDependencies": "patch",
+  "ignore": ["@itzdabbzz/better-auth-plugin-kit"],
+  "privatePackages": {
+    "version": false,
+    "tag": false
+  }
+}
