@@ -52,6 +52,19 @@
         "better-auth": ">=1.6.0 <2",
       },
     },
+    "packages/tebex": {
+      "name": "@itzdabbzz/better-auth-tebex",
+      "version": "0.0.0",
+      "dependencies": {
+        "zod": "^4.3.6",
+      },
+      "devDependencies": {
+        "@itzdabbzz/better-auth-plugin-kit": "workspace:*",
+      },
+      "peerDependencies": {
+        "better-auth": ">=1.6.0 <2",
+      },
+    },
   },
   "packages": {
     "@babel/code-frame": ["@babel/code-frame@7.29.7", "", { "dependencies": { "@babel/helper-validator-identifier": "^7.29.7", "js-tokens": "^4.0.0", "picocolors": "^1.1.1" } }, "sha512-Aup7aUOfpbAUg2ROOJN6Iw5f9DMBlzu0mIkm/malLQFN/YQgO48wCj0Kxa3sEHJvPVFg7siR+qRInwXd2qhQKw=="],
@@ -161,6 +174,8 @@
     "@itzdabbzz/better-auth-plugin-kit": ["@itzdabbzz/better-auth-plugin-kit@workspace:packages/plugin-kit"],
 
     "@itzdabbzz/better-auth-steam": ["@itzdabbzz/better-auth-steam@workspace:packages/steam"],
+
+    "@itzdabbzz/better-auth-tebex": ["@itzdabbzz/better-auth-tebex@workspace:packages/tebex"],
 
     "@jridgewell/sourcemap-codec": ["@jridgewell/sourcemap-codec@1.5.5", "", {}, "sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og=="],
 

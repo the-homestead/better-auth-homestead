@@ -13,10 +13,11 @@ Homestead's collection of focused, independently versioned plugins for
 | ----------------------------------- | ------------------------- | ------------------------------ |
 | `@itzdabbzz/better-auth-steam`      | Private release candidate | Steam account authentication   |
 | `@itzdabbzz/better-auth-cfx`        | Private release candidate | Cfx.re account authentication  |
+| `@itzdabbzz/better-auth-tebex`      | Private release candidate | Tebex billing and entitlements |
 | `@itzdabbzz/better-auth-plugin-kit` | Private, unpublished      | Shared Bun-native test helpers |
 
-Steam and Cfx.re now contain their provider implementations but remain intentionally private until
-their first live provider-flow verification and release review are complete.
+Steam, Cfx.re, and Tebex contain their provider implementations but remain intentionally private
+until their first live provider-flow verification and release review are complete.
 
 ## Requirements
 

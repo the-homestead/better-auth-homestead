@@ -5,7 +5,7 @@
     "perf": "warn",
     "suspicious": "warn"
   },
-  "ignorePatterns": ["**/dist/**", "templates/**"],
+  "ignorePatterns": ["**/dist/**", "ideas/**", "templates/**"],
   "options": {
     "typeAware": true
   }
