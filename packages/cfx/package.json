@@ -32,9 +32,12 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "bun": "./src/index.ts",
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
+    },
+    "./client": {
+      "types": "./dist/client.d.ts",
+      "import": "./dist/client.js"
     }
   },
   "publishConfig": {
@@ -46,6 +49,9 @@
     "clean": "bun -e \"import { rm } from 'node:fs/promises'; await rm('dist', { force: true, recursive: true });\"",
     "test": "bun test",
     "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@itzdabbzz/better-auth-plugin-kit": "workspace:*"

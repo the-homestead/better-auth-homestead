@@ -9,15 +9,14 @@ Homestead's collection of focused, independently versioned plugins for
 
 ## Packages
 
-| Package                             | Status               | Description                    |
-| ----------------------------------- | -------------------- | ------------------------------ |
-| `@itzdabbzz/better-auth-steam`      | Private scaffold     | Steam account authentication   |
-| `@itzdabbzz/better-auth-cfx`        | Private scaffold     | Cfx.re account authentication  |
-| `@itzdabbzz/better-auth-plugin-kit` | Private, unpublished | Shared Bun-native test helpers |
+| Package                             | Status                    | Description                    |
+| ----------------------------------- | ------------------------- | ------------------------------ |
+| `@itzdabbzz/better-auth-steam`      | Private release candidate | Steam account authentication   |
+| `@itzdabbzz/better-auth-cfx`        | Private release candidate | Cfx.re account authentication  |
+| `@itzdabbzz/better-auth-plugin-kit` | Private, unpublished      | Shared Bun-native test helpers |
 
-Steam and Cfx.re are intentionally not publishable yet. Their package contracts, builds, and test
-harnesses are ready for the existing provider implementations, but the scaffolds do not claim to
-implement OAuth flows.
+Steam and Cfx.re now contain their provider implementations but remain intentionally private until
+their first live provider-flow verification and release review are complete.
 
 ## Requirements
 

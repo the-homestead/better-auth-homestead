@@ -68,4 +68,24 @@ describe("validatePackage", () => {
     expect(errors).toContain("missing export target: dist/index.d.ts");
     expect(errors).toContain("test file leaked into dist: dist/index.test.js");
   });
+
+  test("validates every package subpath export", async () => {
+    const packageDir = await createPackage({
+      "dist/index.d.ts": "export {};\n",
+      "dist/index.js": "export {};\n",
+      "package.json": JSON.stringify({
+        name: "@itzdabbzz/better-auth-example",
+        private: true,
+        exports: {
+          ".": { types: "./dist/index.d.ts", import: "./dist/index.js" },
+          "./client": { types: "./dist/client.d.ts", import: "./dist/client.js" },
+        },
+      }),
+    });
+
+    const errors = await validatePackage(packageDir);
+
+    expect(errors).toContain("missing export target: dist/client.js");
+    expect(errors).toContain("missing export target: dist/client.d.ts");
+  });
 });

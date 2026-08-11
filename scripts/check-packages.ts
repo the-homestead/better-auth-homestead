@@ -49,17 +49,19 @@ async function listFiles(directory: string, base = directory): Promise<string[]>
 export async function validatePackage(packageDir: string): Promise<string[]> {
   const errors: string[] = [];
   const manifest = parseManifest(await readFile(join(packageDir, "package.json"), "utf8"));
-  const rootExport = manifest.exports?.["."];
-
+  const exportEntries = Object.entries(manifest.exports ?? {});
   const exportErrors = await Promise.all(
-    [rootExport?.import, rootExport?.types].map(async (target) => {
-      if (!target) return "missing root import or type export";
-      const normalizedTarget = target.replace(/^\.\//, "");
-      return (await exists(join(packageDir, normalizedTarget)))
-        ? undefined
-        : `missing export target: ${normalizedTarget}`;
-    }),
+    exportEntries.flatMap(([subpath, conditions]) =>
+      [conditions.import, conditions.types].map(async (target) => {
+        if (!target) return `missing import or type target for export: ${subpath}`;
+        const normalizedTarget = target.replace(/^\.\//, "");
+        return (await exists(join(packageDir, normalizedTarget)))
+          ? undefined
+          : `missing export target: ${normalizedTarget}`;
+      }),
+    ),
   );
+  if (exportEntries.length === 0) errors.push("package must define exports");
   errors.push(...exportErrors.filter((error) => error !== undefined));
 
   for (const file of await listFiles(join(packageDir, "dist"))) {

@@ -8,6 +8,18 @@ describe("cfx", () => {
     expect(cfx().id).toBe("cfx");
   });
 
+  test("registers the Cfx.re account schema and endpoints", () => {
+    const plugin = cfx();
+
+    expect(plugin.schema?.cfxAccount).toBeDefined();
+    expect(Object.keys(plugin.endpoints ?? {})).toEqual([
+      "cfxInitiate",
+      "cfxCallback",
+      "cfxStatus",
+      "cfxUnlink",
+    ]);
+  });
+
   test("installs in a Better Auth test instance", async () => {
     const plugin = cfx();
     const instance = await createPluginTestInstance(plugin);
