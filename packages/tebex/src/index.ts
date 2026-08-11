@@ -1,11 +1,11 @@
-export { tebex, TEBEX_ERROR_CODES } from "./server.js";
+export { tebex, TEBEX_ERROR_CODES } from "./server/index.js";
 export type {
   TebexCheckoutContext,
   TebexEntitlementChange,
   TebexPlayerIdentifier,
   TebexPluginOptions,
-} from "./server.js";
-export { createTebexClient, getBasketCheckoutURL, TebexProviderError } from "./provider.js";
+} from "./server/index.js";
+export { createTebexClient, getBasketCheckoutURL, TebexProviderError } from "./provider/client.js";
 export type {
   TebexAddPackageInput,
   TebexAuthLink,
@@ -16,12 +16,16 @@ export type {
   TebexCreateBasketInput,
   TebexPackage,
   TebexWebstore,
-} from "./provider.js";
-export { createTebexSignature, parseTebexWebhook, verifyTebexSignature } from "./webhooks.js";
-export type { TebexWebhook } from "./webhooks.js";
-export { projectTebexEvent } from "./entitlements.js";
+} from "./provider/client.js";
+export {
+  createTebexSignature,
+  parseTebexWebhook,
+  verifyTebexSignature,
+} from "./webhooks/signature.js";
+export type { TebexWebhook } from "./webhooks/signature.js";
+export { projectTebexEvent } from "./billing/projection.js";
 export type {
   EntitlementTransition,
   TebexPackageMapping,
   TebexProjection,
-} from "./entitlements.js";
+} from "./billing/projection.js";
