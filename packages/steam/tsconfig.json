@@ -4,5 +4,12 @@
     "outDir": "dist",
     "rootDir": "src"
   },
-  "include": ["src/index.ts", "src/origin-match.ts"]
+  "include": [
+    "src/index.ts",
+    "src/server.ts",
+    "src/client.ts",
+    "src/openid.ts",
+    "src/schema.ts",
+    "src/error-codes.ts"
+  ]
 }
