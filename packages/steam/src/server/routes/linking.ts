@@ -40,7 +40,11 @@ export function createLinkingEndpoints(options: SteamAuthPluginOptions, flowTTLS
           flowTTLSeconds,
         );
         const returnTo = `${ctx.context.baseURL}/steam/callback?state=${encodeURIComponent(stateId)}`;
-        const url = buildSteamOpenIDURL(new URL(ctx.context.baseURL).origin, returnTo).toString();
+        const url = buildSteamOpenIDURL(
+          new URL(ctx.context.baseURL).origin,
+          returnTo,
+          options.provider,
+        ).toString();
         return ctx.json({ redirect: !ctx.body.disableRedirect, url });
       },
     ),

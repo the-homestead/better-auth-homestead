@@ -24,6 +24,14 @@ describe("buildSteamOpenIDURL", () => {
     expect(url.searchParams.get("openid.realm")).toBe("https://auth.example.com");
     expect(url.searchParams.get("openid.return_to")).toContain("state=flow");
   });
+
+  test("supports an injected provider endpoint for local end-to-end tests", () => {
+    const url = buildSteamOpenIDURL("http://localhost:3000", "http://localhost:3000/callback", {
+      openIDURL: "http://localhost:43113/openid/login",
+    });
+
+    expect(url.origin).toBe("http://localhost:43113");
+  });
 });
 
 describe("verifySteamOpenIDResponse", () => {
@@ -39,6 +47,22 @@ describe("verifySteamOpenIDResponse", () => {
     });
 
     expect(await verifySteamOpenIDResponse(params)).toBe("76561198000000000");
+  });
+
+  test("verifies against an injected provider transport", async () => {
+    const requestFetch = mock(async () => new Response("is_valid:true\n"));
+    const params = new URLSearchParams({
+      "openid.claimed_id": "https://steamcommunity.com/openid/id/76561198000000000",
+      "openid.op_endpoint": "http://localhost:43113/openid/login",
+    });
+
+    expect(
+      await verifySteamOpenIDResponse(params, {
+        fetch: requestFetch,
+        openIDURL: "http://localhost:43113/openid/login",
+      }),
+    ).toBe("76561198000000000");
+    expect(requestFetch).toHaveBeenCalledTimes(1);
   });
 
   test.each([

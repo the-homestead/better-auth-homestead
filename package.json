@@ -6,6 +6,7 @@
   "license": "MIT",
   "author": "ItzDabbzz <itzdabbzz@gmail.com>",
   "workspaces": [
+    "apps/*",
     "packages/*"
   ],
   "type": "module",
@@ -23,9 +24,14 @@
     "prepare": "husky",
     "publish:manual": "bun scripts/publish.ts",
     "release": "changeset publish",
-    "test": "bun test",
-    "typecheck": "tsc --noEmit -p tsconfig.json",
-    "validate": "bun run format:check && bun run lint && bun run typecheck && bun test && bun run build && bun run packages:check",
+    "test": "bun test packages scripts && bun run test:integration && bun run test:react",
+    "test:e2e": "bun run --cwd apps/testbed test:e2e",
+    "test:integration": "bun run --cwd apps/testbed test:integration",
+    "test:react": "bun run --cwd apps/testbed test:react",
+    "test:all": "bun run test && bun run test:e2e",
+    "testbed:dev": "bun run --cwd apps/testbed dev",
+    "typecheck": "tsc --noEmit -p tsconfig.json && bun run --filter '@itzdabbzz/better-auth-testbed' typecheck",
+    "validate": "bun run format:check && bun run lint && bun run typecheck && bun run test && bun run build && bun run packages:check && bun run test:e2e",
     "version-packages": "changeset version"
   },
   "devDependencies": {

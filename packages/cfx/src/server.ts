@@ -805,6 +805,19 @@ export const cfx = (options: CfxPluginOptions = {}) => {
           } catch (error) {
             // Redirect responses are intentionally thrown by Better Call.
             if (error instanceof Response) throw error;
+            if (
+              error instanceof Error &&
+              error.name === "APIError" &&
+              "statusCode" in error &&
+              typeof error.statusCode === "number" &&
+              error.statusCode >= 300 &&
+              error.statusCode < 400 &&
+              "headers" in error &&
+              error.headers instanceof Headers &&
+              error.headers?.has("location")
+            ) {
+              throw error;
+            }
 
             const message = error instanceof Error ? error.message : "CFX authentication failed";
             const fallback = state?.errorCallbackURL || options.errorCallbackURL || "/login";

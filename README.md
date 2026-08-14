@@ -37,6 +37,9 @@ Common commands:
 
 ```bash
 bun test                    # Run every test
+bun run test:e2e            # Run the TanStack Start browser suite
+bun run test:all            # Run Bun and browser test layers
+bun run testbed:dev         # Open the real plugin consumer application
 bun run build               # Build all workspaces
 bun run lint                # Run type-aware Oxlint
 bun run format              # Format with Oxfmt
@@ -47,6 +50,7 @@ bun run changeset           # Describe a public package change
 ## Repository structure
 
 ```text
+apps/testbed/          TanStack Start consumer app and full integration/E2E harness
 packages/              Publishable plugins and private shared tooling
 scripts/               Tested repository and release automation
 templates/plugin/      Source template for future plugins
@@ -56,7 +60,9 @@ docs/                  Plugin-authoring and maintainer guidance
 ```
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) before submitting changes and
-[docs/plugin-authoring.md](docs/plugin-authoring.md) before starting a plugin.
+[docs/plugin-authoring.md](docs/plugin-authoring.md) before starting a plugin. The
+[testbed README](apps/testbed/README.md) explains provider mocks, test layers, browser setup, and how
+to add coverage for another plugin.
 
 ## License
 

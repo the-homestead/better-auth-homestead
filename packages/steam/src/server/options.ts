@@ -1,7 +1,7 @@
 import type { User } from "better-auth";
 import type { BetterAuthPluginDBSchema } from "better-auth/db";
 
-import type { SteamProfile } from "../openid/client.js";
+import type { SteamProfile, SteamProviderTransport } from "../openid/client.js";
 
 type UserMapping = Omit<Partial<User>, "id" | "createdAt" | "updatedAt">;
 
@@ -24,6 +24,8 @@ export interface SteamAuthPluginOptions {
   mapProfileToUser?: (profile: SteamProfile) => Promise<UserMapping> | UserMapping;
   /** Override or extend the `steamId` user field schema. */
   schema?: BetterAuthPluginDBSchema;
+  /** Trusted provider transport override, primarily for local integration tests. */
+  provider?: SteamProviderTransport;
 }
 
 export function resolveSteamOptions(options: SteamAuthPluginOptions) {

@@ -10,6 +10,17 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "noUncheckedIndexedAccess": true,
+    "paths": {
+      "@itzdabbzz/better-auth-cfx": ["./packages/cfx/src/index.ts"],
+      "@itzdabbzz/better-auth-cfx/client": ["./packages/cfx/src/client.ts"],
+      "@itzdabbzz/better-auth-plugin-kit": ["./packages/plugin-kit/src/index.ts"],
+      "@itzdabbzz/better-auth-steam": ["./packages/steam/src/index.ts"],
+      "@itzdabbzz/better-auth-steam/client": ["./packages/steam/src/client/index.ts"],
+      "@itzdabbzz/better-auth-steam/server": ["./packages/steam/src/server/index.ts"],
+      "@itzdabbzz/better-auth-tebex": ["./packages/tebex/src/index.ts"],
+      "@itzdabbzz/better-auth-tebex/client": ["./packages/tebex/src/client/index.ts"],
+      "@itzdabbzz/better-auth-tebex/server": ["./packages/tebex/src/server/index.ts"]
+    },
     "skipLibCheck": true,
     "strict": true,
     "target": "ES2022",

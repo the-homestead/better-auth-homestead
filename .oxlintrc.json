@@ -5,7 +5,7 @@
     "perf": "warn",
     "suspicious": "warn"
   },
-  "ignorePatterns": ["**/dist/**", "ideas/**", "templates/**"],
+  "ignorePatterns": ["**/dist/**", "**/routeTree.gen.ts", "ideas/**", "templates/**"],
   "options": {
     "typeAware": true
   }

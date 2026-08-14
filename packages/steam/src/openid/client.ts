@@ -6,6 +6,16 @@ export const STEAM_OPENID_URL = "https://steamcommunity.com/openid/login";
 export const STEAM_PROFILE_URL =
   "https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/";
 
+export type SteamFetch = (input: RequestInfo | URL, init?: RequestInit) => Promise<Response>;
+
+export interface SteamProviderTransport {
+  /** Override only for a trusted proxy or local integration test server. */
+  openIDURL?: string;
+  /** Override only for a trusted proxy or local integration test server. */
+  profileURL?: string;
+  fetch?: SteamFetch;
+}
+
 const STEAM_ID_PATTERN = /^https:\/\/steamcommunity\.com\/openid\/id\/(\d{17})$/;
 const identifierSelect = "http://specs.openid.net/auth/2.0/identifier_select";
 
@@ -24,8 +34,12 @@ const steamProfileResponseSchema = z.object({
 
 export type SteamProfile = z.infer<typeof steamProfileSchema>;
 
-export function buildSteamOpenIDURL(realm: string, returnTo: string): URL {
-  const url = new URL(STEAM_OPENID_URL);
+export function buildSteamOpenIDURL(
+  realm: string,
+  returnTo: string,
+  transport: SteamProviderTransport = {},
+): URL {
+  const url = new URL(transport.openIDURL ?? STEAM_OPENID_URL);
   url.search = new URLSearchParams({
     "openid.claimed_id": identifierSelect,
     "openid.identity": identifierSelect,
@@ -45,8 +59,12 @@ function parseVerificationResponse(value: string): ReadonlyMap<string, string> {
   return new Map(entries);
 }
 
-export async function verifySteamOpenIDResponse(params: URLSearchParams): Promise<string> {
-  if (params.get("openid.op_endpoint") !== STEAM_OPENID_URL) {
+export async function verifySteamOpenIDResponse(
+  params: URLSearchParams,
+  transport: SteamProviderTransport = {},
+): Promise<string> {
+  const openIDURL = transport.openIDURL ?? STEAM_OPENID_URL;
+  if (params.get("openid.op_endpoint") !== openIDURL) {
     throw new Error("Steam OpenID provider endpoint is invalid");
   }
 
@@ -62,7 +80,8 @@ export async function verifySteamOpenIDResponse(params: URLSearchParams): Promis
   }
   verificationParams.set("openid.mode", "check_authentication");
 
-  const response = await fetch(STEAM_OPENID_URL, {
+  const requestFetch = transport.fetch ?? globalThis.fetch.bind(globalThis);
+  const response = await requestFetch(openIDURL, {
     body: verificationParams,
     headers: { "content-type": "application/x-www-form-urlencoded" },
     method: "POST",
@@ -82,12 +101,14 @@ export async function verifySteamOpenIDResponse(params: URLSearchParams): Promis
 export async function fetchSteamProfile(
   steamApiKey: string,
   steamId: string,
+  transport: SteamProviderTransport = {},
 ): Promise<SteamProfile> {
-  const url = new URL(STEAM_PROFILE_URL);
+  const url = new URL(transport.profileURL ?? STEAM_PROFILE_URL);
   url.searchParams.set("key", steamApiKey);
   url.searchParams.set("steamids", steamId);
 
-  const response = await fetch(url);
+  const requestFetch = transport.fetch ?? globalThis.fetch.bind(globalThis);
+  const response = await requestFetch(url);
   if (!response.ok) {
     throw new Error(`Steam profile request failed with HTTP ${response.status}`);
   }

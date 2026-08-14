@@ -51,7 +51,11 @@ export function createAuthenticationEndpoints(
           flowTTLSeconds,
         );
         const returnTo = `${ctx.context.baseURL}/steam/callback?state=${encodeURIComponent(stateId)}`;
-        const url = buildSteamOpenIDURL(new URL(ctx.context.baseURL).origin, returnTo).toString();
+        const url = buildSteamOpenIDURL(
+          new URL(ctx.context.baseURL).origin,
+          returnTo,
+          options.provider,
+        ).toString();
         return ctx.json({ redirect: !ctx.body.disableRedirect, url });
       },
     ),
@@ -95,20 +99,23 @@ export function createAuthenticationEndpoints(
           return redirectError("STEAM_VERIFICATION_FAILED");
         }
 
-        const steamId = await verifySteamOpenIDResponse(openIDParams(ctx.query)).catch(
-          (error: unknown) => {
-            ctx.context.logger.error("Steam OpenID verification failed", { error });
-            return null;
-          },
-        );
+        const steamId = await verifySteamOpenIDResponse(
+          openIDParams(ctx.query),
+          options.provider,
+        ).catch((error: unknown) => {
+          ctx.context.logger.error("Steam OpenID verification failed", { error });
+          return null;
+        });
         if (!steamId) return redirectError("STEAM_VERIFICATION_FAILED");
 
-        const profile = await fetchSteamProfile(options.steamApiKey, steamId).catch(
-          (error: unknown) => {
-            ctx.context.logger.warn("Steam profile request failed", { error });
-            return null;
-          },
-        );
+        const profile = await fetchSteamProfile(
+          options.steamApiKey,
+          steamId,
+          options.provider,
+        ).catch((error: unknown) => {
+          ctx.context.logger.warn("Steam profile request failed", { error });
+          return null;
+        });
         if (!profile && options.profileFailureMode === "reject") {
           return redirectError("STEAM_PROFILE_UNAVAILABLE");
         }

@@ -7,5 +7,9 @@ dist/
 .DS_Store
 Thumbs.db
 coverage/
+**/.data/
+**/.tanstack/
+**/playwright-report/
+**/test-results/
 *.tsbuildinfo
 ideas/

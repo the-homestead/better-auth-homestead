@@ -29,6 +29,10 @@ official `testUtils()` plugin with Bun's in-memory SQLite database and runs the 
 Mock provider HTTP calls at the network boundary. Cover successful callbacks, rejected callbacks,
 missing stable identifiers, malformed profiles, account linking, and provider-specific errors.
 
+Every provider plugin must also be installed in the private TanStack Start testbed. Add combined-schema
+coverage, a mocked provider success flow, a provider rejection path, and browser coverage when the
+plugin exposes browser-visible behavior. See [`apps/testbed/README.md`](../apps/testbed/README.md).
+
 ## Prepare publication
 
 Before a first release:
