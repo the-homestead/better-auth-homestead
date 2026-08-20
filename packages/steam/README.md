@@ -1,4 +1,4 @@
-# @itzdabbzz/better-auth-steam
+# @homestead/ba-steam
 
 Steam OpenID sign-in, account linking, and profile synchronization for Better Auth.
 
@@ -10,7 +10,7 @@ Steam OpenID sign-in, account linking, and profile synchronization for Better Au
 
 ```ts
 import { betterAuth } from "better-auth";
-import { steam } from "@itzdabbzz/better-auth-steam";
+import { steam } from "@homestead/ba-steam";
 
 export const auth = betterAuth({
   trustedOrigins: ["https://app.example.com"],
@@ -31,7 +31,7 @@ it.
 
 ```ts
 import { createAuthClient } from "better-auth/client";
-import { steamClient } from "@itzdabbzz/better-auth-steam/client";
+import { steamClient } from "@homestead/ba-steam/client";
 
 export const authClient = createAuthClient({
   plugins: [steamClient()],
@@ -89,4 +89,4 @@ SteamID64 format before creating a session.
 
 ## License
 
-MIT © ItzDabbzz
+MIT © Homestead Systems

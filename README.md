@@ -4,17 +4,18 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 Homestead's collection of focused, independently versioned plugins for
-[Better Auth](https://www.better-auth.com/). The repository is maintained by
-[ItzDabbzz](https://github.com/ItzDabbzz).
+[Better Auth](https://www.better-auth.com/).
+
+> The repository is maintained by [Homestead Systems](https://github.com/the-homestead).
 
 ## Packages
 
-| Package                             | Status                    | Description                    |
-| ----------------------------------- | ------------------------- | ------------------------------ |
-| `@itzdabbzz/better-auth-steam`      | Private release candidate | Steam account authentication   |
-| `@itzdabbzz/better-auth-cfx`        | Private release candidate | Cfx.re account authentication  |
-| `@itzdabbzz/better-auth-tebex`      | Private release candidate | Tebex billing and entitlements |
-| `@itzdabbzz/better-auth-plugin-kit` | Private, unpublished      | Shared Bun-native test helpers |
+| Package                    | Status                    | Description                    |
+| -------------------------- | ------------------------- | ------------------------------ |
+| `@homestead/ba-steam`      | Private release candidate | Steam account authentication   |
+| `@homestead/ba-cfx`        | Private release candidate | Cfx.re account authentication  |
+| `@homestead/ba-tebex`      | Private release candidate | Tebex billing and entitlements |
+| `@homestead/ba-plugin-kit` | Private, unpublished      | Shared Bun-native test helpers |
 
 Steam, Cfx.re, and Tebex contain their provider implementations but remain intentionally private
 until their first live provider-flow verification and release review are complete.
@@ -66,4 +67,4 @@ to add coverage for another plugin.
 
 ## License
 
-[MIT](LICENSE) © ItzDabbzz
+[MIT](LICENSE) © Homestead Systems

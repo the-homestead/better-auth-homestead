@@ -22,4 +22,4 @@ bun --filter "{{PLUGIN_PACKAGE_NAME}}" build
 
 ## License
 
-MIT © ItzDabbzz
+MIT © Homestead Systems

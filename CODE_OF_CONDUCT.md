@@ -16,6 +16,6 @@ someone represents this project.
 
 ## Enforcement
 
-Report conduct concerns privately to the repository maintainer through GitHub. ItzDabbzz may edit or
-remove contributions and temporarily or permanently restrict participation when behavior violates
-this policy. Reports will be handled as privately as practical.
+Report conduct concerns privately to [support@homestead.systems](mailto:support@homestead.systems) or through
+GitHub. Homestead Systems may edit or remove contributions and temporarily or permanently restrict
+participation when behavior violates this policy. Reports will be handled as privately as practical.

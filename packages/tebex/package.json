@@ -1,5 +1,5 @@
 {
-  "name": "@itzdabbzz/better-auth-tebex",
+  "name": "@homestead/ba-tebex",
   "version": "0.0.0",
   "private": true,
   "description": "A Better Auth Tebex billing and entitlement plugin from Homestead.",
@@ -16,7 +16,7 @@
     "url": "https://github.com/the-homestead/better-auth-homestead/issues"
   },
   "license": "MIT",
-  "author": "ItzDabbzz <itzdabbzz@gmail.com>",
+  "author": "Homestead Systems <dabz@homestead.systems>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/the-homestead/better-auth-homestead.git",
@@ -60,7 +60,7 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@itzdabbzz/better-auth-plugin-kit": "workspace:*"
+    "@homestead/ba-plugin-kit": "workspace:*"
   },
   "peerDependencies": {
     "better-auth": ">=1.6.0 <2"

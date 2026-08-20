@@ -1,6 +1,6 @@
-import { cfx } from "@itzdabbzz/better-auth-cfx";
-import { steam } from "@itzdabbzz/better-auth-steam";
-import { tebex } from "@itzdabbzz/better-auth-tebex";
+import { cfx } from "@homestead/ba-cfx";
+import { steam } from "@homestead/ba-steam";
+import { tebex } from "@homestead/ba-tebex";
 
 export interface TestbedProviderURLs {
   cfx: string;

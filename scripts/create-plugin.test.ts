@@ -31,7 +31,7 @@ describe("createPlugin", () => {
     const source = await readFile(join(result.destination, "src", "index.ts"), "utf8");
     const readme = await readFile(join(result.destination, "README.md"), "utf8");
 
-    expect(manifest).toContain('"name": "@itzdabbzz/better-auth-discord-accounts"');
+    expect(manifest).toContain('"name": "@homestead/ba-discord-accounts"');
     expect(source).toContain('id: "discord-accounts"');
     expect(source).toContain("discordAccounts");
     expect(readme).toContain("Better Auth Discord Accounts");

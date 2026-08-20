@@ -1,4 +1,4 @@
-# @itzdabbzz/better-auth-tebex
+# @homestead/ba-tebex
 
 ## 0.0.0
 

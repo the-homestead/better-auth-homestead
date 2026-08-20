@@ -6,7 +6,7 @@ body:
     id: package
     attributes:
       label: Package or area
-      placeholder: "@itzdabbzz/better-auth-steam"
+      placeholder: "@homestead/ba-steam"
     validations:
       required: true
 

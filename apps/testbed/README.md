@@ -8,9 +8,9 @@ The testbed is development infrastructure. It is not published and is not a prod
 
 ## Included plugins
 
-- `@itzdabbzz/better-auth-steam` and its client plugin
-- `@itzdabbzz/better-auth-cfx` and its client plugin
-- `@itzdabbzz/better-auth-tebex` and its client plugin
+- `@homestead/ba-steam` and its client plugin
+- `@homestead/ba-cfx` and its client plugin
+- `@homestead/ba-tebex` and its client plugin
 - Better Auth email/password authentication for deterministic player sessions
 - Better Auth `testUtils` in the in-process integration harness
 

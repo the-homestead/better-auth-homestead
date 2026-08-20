@@ -7,8 +7,8 @@ body:
     attributes:
       label: Package
       options:
-        - "@itzdabbzz/better-auth-steam"
-        - "@itzdabbzz/better-auth-cfx"
+        - "@homestead/ba-steam"
+        - "@homestead/ba-cfx"
         - Repository tooling
         - Another package
     validations:

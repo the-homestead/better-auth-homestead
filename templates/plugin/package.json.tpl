@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "description": "{{PLUGIN_DESCRIPTION}}",
-  "author": "ItzDabbzz <itzdabbzz@gmail.com>",
+  "author": "Homestead Systems <dabz@homestead.systems>",
   "license": "MIT",
   "type": "module",
   "repository": {
@@ -46,7 +46,7 @@
     "better-auth": ">=1.6.0 <2"
   },
   "devDependencies": {
-    "@itzdabbzz/better-auth-plugin-kit": "workspace:*"
+    "@homestead/ba-plugin-kit": "workspace:*"
   },
   "publishConfig": {
     "access": "public",

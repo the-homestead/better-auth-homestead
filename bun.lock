@@ -20,12 +20,12 @@
       },
     },
     "apps/testbed": {
-      "name": "@itzdabbzz/better-auth-testbed",
+      "name": "@homestead/ba-testbed",
       "version": "0.0.0",
       "dependencies": {
-        "@itzdabbzz/better-auth-cfx": "workspace:*",
-        "@itzdabbzz/better-auth-steam": "workspace:*",
-        "@itzdabbzz/better-auth-tebex": "workspace:*",
+        "@homestead/ba-cfx": "workspace:*",
+        "@homestead/ba-steam": "workspace:*",
+        "@homestead/ba-tebex": "workspace:*",
         "@tanstack/react-router": "1.170.27",
         "@tanstack/react-start": "1.168.44",
         "better-auth": "1.6.26",
@@ -44,46 +44,46 @@
       },
     },
     "packages/cfx": {
-      "name": "@itzdabbzz/better-auth-cfx",
+      "name": "@homestead/ba-cfx",
       "version": "0.0.0",
       "dependencies": {
         "zod": "^4.3.6",
       },
       "devDependencies": {
-        "@itzdabbzz/better-auth-plugin-kit": "workspace:*",
+        "@homestead/ba-plugin-kit": "workspace:*",
       },
       "peerDependencies": {
         "better-auth": ">=1.6.0 <2",
       },
     },
     "packages/plugin-kit": {
-      "name": "@itzdabbzz/better-auth-plugin-kit",
+      "name": "@homestead/ba-plugin-kit",
       "version": "0.0.0",
       "dependencies": {
         "better-auth": "1.6.26",
       },
     },
     "packages/steam": {
-      "name": "@itzdabbzz/better-auth-steam",
+      "name": "@homestead/ba-steam",
       "version": "0.0.0",
       "dependencies": {
         "zod": "^4.3.6",
       },
       "devDependencies": {
-        "@itzdabbzz/better-auth-plugin-kit": "workspace:*",
+        "@homestead/ba-plugin-kit": "workspace:*",
       },
       "peerDependencies": {
         "better-auth": ">=1.6.0 <2",
       },
     },
     "packages/tebex": {
-      "name": "@itzdabbzz/better-auth-tebex",
+      "name": "@homestead/ba-tebex",
       "version": "0.0.0",
       "dependencies": {
         "zod": "^4.3.6",
       },
       "devDependencies": {
-        "@itzdabbzz/better-auth-plugin-kit": "workspace:*",
+        "@homestead/ba-plugin-kit": "workspace:*",
       },
       "peerDependencies": {
         "better-auth": ">=1.6.0 <2",
@@ -221,17 +221,17 @@
 
     "@happy-dom/global-registrator": ["@happy-dom/global-registrator@20.11.2", "", { "dependencies": { "@types/node": ">=20.0.0", "happy-dom": "^20.11.2" } }, "sha512-7fkpoXZWzyxaBkzRtlD0wRU5ckxbNT4j6BywzpSYh+SFPsGxEVmNR9KHaMwM2xkHB0pADQLl4Z8DSrztECJ7Ww=="],
 
+    "@homestead/ba-cfx": ["@homestead/ba-cfx@workspace:packages/cfx"],
+
+    "@homestead/ba-plugin-kit": ["@homestead/ba-plugin-kit@workspace:packages/plugin-kit"],
+
+    "@homestead/ba-steam": ["@homestead/ba-steam@workspace:packages/steam"],
+
+    "@homestead/ba-tebex": ["@homestead/ba-tebex@workspace:packages/tebex"],
+
+    "@homestead/ba-testbed": ["@homestead/ba-testbed@workspace:apps/testbed"],
+
     "@inquirer/external-editor": ["@inquirer/external-editor@1.0.3", "", { "dependencies": { "chardet": "^2.1.1", "iconv-lite": "^0.7.0" }, "peerDependencies": { "@types/node": ">=18" }, "optionalPeers": ["@types/node"] }, "sha512-RWbSrDiYmO4LbejWY7ttpxczuwQyZLBUyygsA9Nsv95hpzUWwnNTVQmAq3xuh7vNwCp07UTmE5i11XAEExx4RA=="],
-
-    "@itzdabbzz/better-auth-cfx": ["@itzdabbzz/better-auth-cfx@workspace:packages/cfx"],
-
-    "@itzdabbzz/better-auth-plugin-kit": ["@itzdabbzz/better-auth-plugin-kit@workspace:packages/plugin-kit"],
-
-    "@itzdabbzz/better-auth-steam": ["@itzdabbzz/better-auth-steam@workspace:packages/steam"],
-
-    "@itzdabbzz/better-auth-tebex": ["@itzdabbzz/better-auth-tebex@workspace:packages/tebex"],
-
-    "@itzdabbzz/better-auth-testbed": ["@itzdabbzz/better-auth-testbed@workspace:apps/testbed"],
 
     "@jridgewell/gen-mapping": ["@jridgewell/gen-mapping@0.3.13", "", { "dependencies": { "@jridgewell/sourcemap-codec": "^1.5.0", "@jridgewell/trace-mapping": "^0.3.24" } }, "sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA=="],
 

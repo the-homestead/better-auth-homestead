@@ -77,8 +77,8 @@ export async function validatePackage(packageDir: string): Promise<string[]> {
       ),
     );
     errors.push(...missingPublishFiles.filter((error) => error !== undefined));
-    if (typeof manifest.author !== "string" || !manifest.author.includes("ItzDabbzz")) {
-      errors.push("author must identify ItzDabbzz");
+    if (typeof manifest.author !== "string" || !manifest.author.includes("Homestead Systems")) {
+      errors.push("author must identify Homestead Systems");
     }
     if (!manifest.repository) errors.push("repository metadata is required");
     if (!manifest.peerDependencies?.["better-auth"]) {

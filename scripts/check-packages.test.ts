@@ -35,10 +35,10 @@ describe("validatePackage", () => {
       "dist/index.d.ts": "export declare function plugin(): unknown;\n",
       "dist/index.js": "export function plugin() {}\n",
       "package.json": JSON.stringify({
-        name: "@itzdabbzz/better-auth-example",
+        name: "@homestead/ba-example",
         version: "0.0.0",
         private: true,
-        author: "ItzDabbzz <itzdabbzz@gmail.com>",
+        author: "Homestead Systems <dabz@homestead.systems>",
         files: ["dist", "CHANGELOG.md", "LICENSE", "README.md"],
         exports: { ".": { types: "./dist/index.d.ts", import: "./dist/index.js" } },
         peerDependencies: { "better-auth": ">=1.6.0 <2" },
@@ -54,7 +54,7 @@ describe("validatePackage", () => {
     const packageDir = await createPackage({
       "dist/index.test.js": "throw new Error('leaked');\n",
       "package.json": JSON.stringify({
-        name: "@itzdabbzz/better-auth-example",
+        name: "@homestead/ba-example",
         private: true,
         files: ["dist"],
         exports: { ".": { types: "./dist/index.d.ts", import: "./dist/index.js" } },
@@ -74,7 +74,7 @@ describe("validatePackage", () => {
       "dist/index.d.ts": "export {};\n",
       "dist/index.js": "export {};\n",
       "package.json": JSON.stringify({
-        name: "@itzdabbzz/better-auth-example",
+        name: "@homestead/ba-example",
         private: true,
         exports: {
           ".": { types: "./dist/index.d.ts", import: "./dist/index.js" },

@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { createPluginTestInstance } from "@itzdabbzz/better-auth-plugin-kit";
+import { createPluginTestInstance } from "@homestead/ba-plugin-kit";
 
 import { STEAM_ERROR_CODES, steam } from "../src/index.ts";
 

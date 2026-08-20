@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { createPluginTestInstance } from "@itzdabbzz/better-auth-plugin-kit";
+import { createPluginTestInstance } from "@homestead/ba-plugin-kit";
 
 import { {{PLUGIN_FUNCTION_NAME}} } from "./index.ts";
 

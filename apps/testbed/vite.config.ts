@@ -12,27 +12,27 @@ export default defineConfig({
   resolve: {
     alias: [
       {
-        find: "@itzdabbzz/better-auth-cfx/client",
+        find: "@homestead/ba-cfx/client",
         replacement: workspaceSource("../../packages/cfx/src/client.ts"),
       },
       {
-        find: "@itzdabbzz/better-auth-cfx",
+        find: "@homestead/ba-cfx",
         replacement: workspaceSource("../../packages/cfx/src/index.ts"),
       },
       {
-        find: "@itzdabbzz/better-auth-steam/client",
+        find: "@homestead/ba-steam/client",
         replacement: workspaceSource("../../packages/steam/src/client/index.ts"),
       },
       {
-        find: "@itzdabbzz/better-auth-steam",
+        find: "@homestead/ba-steam",
         replacement: workspaceSource("../../packages/steam/src/index.ts"),
       },
       {
-        find: "@itzdabbzz/better-auth-tebex/client",
+        find: "@homestead/ba-tebex/client",
         replacement: workspaceSource("../../packages/tebex/src/client/index.ts"),
       },
       {
-        find: "@itzdabbzz/better-auth-tebex",
+        find: "@homestead/ba-tebex",
         replacement: workspaceSource("../../packages/tebex/src/index.ts"),
       },
     ],

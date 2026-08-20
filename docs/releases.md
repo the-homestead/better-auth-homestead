@@ -17,7 +17,7 @@ After a package exists on npm, configure GitHub trusted publishing for:
 
 - Repository: `the-homestead/better-auth-homestead`
 - Workflow: `release.yml`
-- Package: the exact `@itzdabbzz/better-auth-*` name
+- Package: the exact `@homestead/ba-*` name
 
 The workflow grants `id-token: write` only to the release job and installs npm 11.15 or newer. The
 optional `NPM_TOKEN` repository secret bootstraps a package's first release or acts as a fallback.

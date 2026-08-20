@@ -1,4 +1,4 @@
-# @itzdabbzz/better-auth-plugin-kit
+# @homestead/ba-plugin-kit
 
 Private test and development utilities shared by Homestead's Better Auth plugins.
 

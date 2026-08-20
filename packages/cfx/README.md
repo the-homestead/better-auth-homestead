@@ -1,4 +1,4 @@
-# @itzdabbzz/better-auth-cfx
+# @homestead/ba-cfx
 
 Cfx.re account authentication and linking for Better Auth using Discourse User API Keys.
 
@@ -10,7 +10,7 @@ Cfx.re account authentication and linking for Better Auth using Discourse User A
 
 ```ts
 import { betterAuth } from "better-auth";
-import { cfx } from "@itzdabbzz/better-auth-cfx";
+import { cfx } from "@homestead/ba-cfx";
 
 export const auth = betterAuth({
   trustedOrigins: ["https://app.example.com"],
@@ -32,7 +32,7 @@ schema-generation workflow used by the host application before enabling the plug
 
 ```ts
 import { createAuthClient } from "better-auth/client";
-import { cfxClient } from "@itzdabbzz/better-auth-cfx/client";
+import { cfxClient } from "@homestead/ba-cfx/client";
 
 export const authClient = createAuthClient({
   plugins: [cfxClient()],
@@ -67,4 +67,4 @@ validation.
 
 ## License
 
-MIT © ItzDabbzz
+MIT © Homestead Systems
