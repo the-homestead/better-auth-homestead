@@ -3,10 +3,14 @@ export interface ReleaseState {
   status: string;
 }
 
+export interface PublishRunOptions {
+  env?: Record<string, string>;
+}
+
 export interface PublishAdapters {
   getBranch: () => Promise<string>;
   getStatus: () => Promise<string>;
-  run: (command: string[]) => Promise<void>;
+  run: (command: string[], options?: PublishRunOptions) => Promise<void>;
 }
 
 export function assertReleaseReady(state: ReleaseState): void {
@@ -26,7 +30,9 @@ export async function manualPublish(adapters: PublishAdapters): Promise<void> {
 
   await adapters.run(["bun", "run", "validate"]);
   await adapters.run(["bun", "pm", "whoami"]);
-  await adapters.run(["bunx", "changeset", "publish"]);
+  await adapters.run(["bunx", "changeset", "publish"], {
+    env: { NPM_CONFIG_PROVENANCE: "false" },
+  });
 }
 
 async function output(command: string[]): Promise<string> {
@@ -37,8 +43,12 @@ async function output(command: string[]): Promise<string> {
   return text.trim();
 }
 
-async function run(command: string[]): Promise<void> {
-  const process = Bun.spawn(command, { stderr: "inherit", stdout: "inherit" });
+async function run(command: string[], options?: PublishRunOptions): Promise<void> {
+  const process = Bun.spawn(command, {
+    env: options?.env ? { ...globalThis.process.env, ...options.env } : undefined,
+    stderr: "inherit",
+    stdout: "inherit",
+  });
   const exitCode = await process.exited;
   if (exitCode !== 0) throw new Error(`Command failed: ${command.join(" ")}`);
 }
