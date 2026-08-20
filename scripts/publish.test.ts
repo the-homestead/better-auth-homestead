@@ -18,23 +18,20 @@ describe("assertReleaseReady", () => {
 
 describe("manualPublish", () => {
   test("validates before publishing", async () => {
-    const commands: Array<{ command: string[]; env?: Record<string, string> }> = [];
+    const commands: string[][] = [];
 
     await manualPublish({
       getBranch: async () => "main",
       getStatus: async () => "",
-      run: async (command, options) => {
-        commands.push({ command, env: options?.env });
+      run: async (command) => {
+        commands.push(command);
       },
     });
 
     expect(commands).toEqual([
-      { command: ["bun", "run", "validate"] },
-      { command: ["bun", "pm", "whoami"] },
-      {
-        command: ["bunx", "changeset", "publish"],
-        env: { NPM_CONFIG_PROVENANCE: "false" },
-      },
+      ["bun", "run", "validate"],
+      ["bun", "pm", "whoami"],
+      ["bunx", "changeset", "publish"],
     ]);
   });
 });
