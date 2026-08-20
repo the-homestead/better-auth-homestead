@@ -68,6 +68,8 @@ jobs:
 
       - name: Publish packages missing from npm
         shell: bash
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           for package_dir in packages/cfx packages/steam; do
             package_name=$(node -p "require('./${package_dir}/package.json').name")
