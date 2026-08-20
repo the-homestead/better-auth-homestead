@@ -22,6 +22,6 @@
     "typecheck": "tsc --noEmit -p tsconfig.json"
   },
   "dependencies": {
-    "better-auth": "1.6.26"
+    "better-auth": "1.6.29"
   }
 }
