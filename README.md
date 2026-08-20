@@ -6,8 +6,6 @@
 Homestead's collection of focused, independently versioned plugins for
 [Better Auth](https://www.better-auth.com/).
 
-> The repository is maintained by [Homestead Systems](https://github.com/the-homestead).
-
 ## Packages
 
 | Package                            | Status                    | Description                    |
