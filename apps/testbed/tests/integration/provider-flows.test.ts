@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, test } from "bun:test";
-import { createTebexSignature } from "@homestead/ba-tebex";
+import { createTebexSignature } from "@homestead-systems/ba-tebex";
 import crypto from "node:crypto";
 
 import { createTestbedAuth } from "../../test-support/test-auth.ts";

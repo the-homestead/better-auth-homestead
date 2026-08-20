@@ -10,7 +10,7 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["@homestead/ba-plugin-kit"],
+  "ignore": ["@homestead-systems/ba-plugin-kit"],
   "privatePackages": {
     "version": false,
     "tag": false

@@ -46,7 +46,7 @@
     "better-auth": ">=1.6.0 <2"
   },
   "devDependencies": {
-    "@homestead/ba-plugin-kit": "workspace:*"
+    "@homestead-systems/ba-plugin-kit": "workspace:*"
   },
   "publishConfig": {
     "access": "public",

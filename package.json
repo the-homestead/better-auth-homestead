@@ -30,7 +30,7 @@
     "test:react": "bun run --cwd apps/testbed test:react",
     "test:all": "bun run test && bun run test:e2e",
     "testbed:dev": "bun run --cwd apps/testbed dev",
-    "typecheck": "tsc --noEmit -p tsconfig.json && bun run --filter '@homestead/ba-testbed' typecheck",
+    "typecheck": "tsc --noEmit -p tsconfig.json && bun run --filter '@homestead-systems/ba-testbed' typecheck",
     "validate": "bun run format:check && bun run lint && bun run typecheck && bun run test && bun run build && bun run packages:check && bun run test:e2e",
     "version-packages": "changeset version"
   },

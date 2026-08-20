@@ -1,5 +1,5 @@
 {
-  "name": "@homestead/ba-tebex",
+  "name": "@homestead-systems/ba-tebex",
   "version": "0.0.0",
   "private": true,
   "description": "A Better Auth Tebex billing and entitlement plugin from Homestead.",
@@ -60,7 +60,7 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@homestead/ba-plugin-kit": "workspace:*"
+    "@homestead-systems/ba-plugin-kit": "workspace:*"
   },
   "peerDependencies": {
     "better-auth": ">=1.6.0 <2"

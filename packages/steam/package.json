@@ -1,7 +1,7 @@
 {
-  "name": "@homestead/ba-steam",
-  "version": "0.0.0",
-  "private": true,
+  "name": "@homestead-systems/ba-steam",
+  "version": "0.1.0",
+  "private": false,
   "description": "A Better Auth Steam plugin from Homestead.",
   "keywords": [
     "authentication",
@@ -58,7 +58,7 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@homestead/ba-plugin-kit": "workspace:*"
+    "@homestead-systems/ba-plugin-kit": "workspace:*"
   },
   "peerDependencies": {
     "better-auth": ">=1.6.0 <2"

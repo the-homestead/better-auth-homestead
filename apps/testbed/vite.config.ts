@@ -12,27 +12,27 @@ export default defineConfig({
   resolve: {
     alias: [
       {
-        find: "@homestead/ba-cfx/client",
+        find: "@homestead-systems/ba-cfx/client",
         replacement: workspaceSource("../../packages/cfx/src/client.ts"),
       },
       {
-        find: "@homestead/ba-cfx",
+        find: "@homestead-systems/ba-cfx",
         replacement: workspaceSource("../../packages/cfx/src/index.ts"),
       },
       {
-        find: "@homestead/ba-steam/client",
+        find: "@homestead-systems/ba-steam/client",
         replacement: workspaceSource("../../packages/steam/src/client/index.ts"),
       },
       {
-        find: "@homestead/ba-steam",
+        find: "@homestead-systems/ba-steam",
         replacement: workspaceSource("../../packages/steam/src/index.ts"),
       },
       {
-        find: "@homestead/ba-tebex/client",
+        find: "@homestead-systems/ba-tebex/client",
         replacement: workspaceSource("../../packages/tebex/src/client/index.ts"),
       },
       {
-        find: "@homestead/ba-tebex",
+        find: "@homestead-systems/ba-tebex",
         replacement: workspaceSource("../../packages/tebex/src/index.ts"),
       },
     ],

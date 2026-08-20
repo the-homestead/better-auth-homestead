@@ -1,6 +1,6 @@
-import { cfx } from "@homestead/ba-cfx";
-import { steam } from "@homestead/ba-steam";
-import { tebex } from "@homestead/ba-tebex";
+import { cfx } from "@homestead-systems/ba-cfx";
+import { steam } from "@homestead-systems/ba-steam";
+import { tebex } from "@homestead-systems/ba-tebex";
 
 export interface TestbedProviderURLs {
   cfx: string;

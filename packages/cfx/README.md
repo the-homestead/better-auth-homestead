@@ -1,16 +1,15 @@
-# @homestead/ba-cfx
+# @homestead-systems/ba-cfx
 
 Cfx.re account authentication and linking for Better Auth using Discourse User API Keys.
 
 > [!IMPORTANT]
-> This package is still private while its first live Cfx.re flow is verified and release metadata is
-> prepared. It is not available from npm yet.
+> This package is published under the `@homestead-systems` scope.
 
 ## Server setup
 
 ```ts
 import { betterAuth } from "better-auth";
-import { cfx } from "@homestead/ba-cfx";
+import { cfx } from "@homestead-systems/ba-cfx";
 
 export const auth = betterAuth({
   trustedOrigins: ["https://app.example.com"],
@@ -32,7 +31,7 @@ schema-generation workflow used by the host application before enabling the plug
 
 ```ts
 import { createAuthClient } from "better-auth/client";
-import { cfxClient } from "@homestead/ba-cfx/client";
+import { cfxClient } from "@homestead-systems/ba-cfx/client";
 
 export const authClient = createAuthClient({
   plugins: [cfxClient()],

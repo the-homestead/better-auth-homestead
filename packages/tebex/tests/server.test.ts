@@ -1,5 +1,5 @@
 import { describe, expect, spyOn, test } from "bun:test";
-import { createPluginTestInstance } from "@homestead/ba-plugin-kit";
+import { createPluginTestInstance } from "@homestead-systems/ba-plugin-kit";
 
 import { tebex } from "../src/server/index.ts";
 import { createTebexSignature } from "../src/webhooks/signature.ts";

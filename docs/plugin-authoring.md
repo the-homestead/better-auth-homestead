@@ -9,7 +9,7 @@ bun run plugin:create twitch
 ```
 
 This creates `packages/twitch` with the final package name
-`@homestead/ba-twitch`. The new package remains private until it has complete behavior,
+`@homestead-systems/ba-twitch`. The new package remains private until it has complete behavior,
 documentation, and tests.
 
 ## Implement the plugin

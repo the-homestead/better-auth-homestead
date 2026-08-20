@@ -1,4 +1,4 @@
-# @homestead/ba-tebex
+# @homestead-systems/ba-tebex
 
 Tebex Headless checkout, billing records, recurring payments, and durable entitlements for Better
 Auth.
@@ -11,7 +11,7 @@ Auth.
 
 ```ts
 import { betterAuth } from "better-auth";
-import { tebex } from "@homestead/ba-tebex";
+import { tebex } from "@homestead-systems/ba-tebex";
 
 export const auth = betterAuth({
   trustedOrigins: ["https://app.example.com"],
@@ -49,7 +49,7 @@ gateway already enforces the source addresses.
 
 ```ts
 import { createAuthClient } from "better-auth/client";
-import { tebexClient } from "@homestead/ba-tebex/client";
+import { tebexClient } from "@homestead-systems/ba-tebex/client";
 
 export const authClient = createAuthClient({
   plugins: [tebexClient()],

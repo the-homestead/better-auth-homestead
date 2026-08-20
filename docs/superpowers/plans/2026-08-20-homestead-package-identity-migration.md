@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Rename all first-party packages and references to the Homestead `@homestead/ba-*` first-release identity before npm publication.
+**Goal:** Rename all first-party packages and references to the Homestead `@homestead-systems/ba-*` first-release identity before npm publication.
 
 **Architecture:** Keep the existing Bun workspace layout and public APIs unchanged. Update package names at the manifest boundary, then propagate those names through TypeScript/Vite resolution, imports, generator templates, tests, and documentation. Regenerate the Bun lockfile after manifests are consistent; no aliases or compatibility shims are added.
 
@@ -21,7 +21,7 @@
 - Modify: `packages/tebex/package.json`
 - Modify: `apps/testbed/package.json`
 
-- [ ] Replace old first-party package names with `@homestead/ba-plugin-kit`, `@homestead/ba-steam`, `@homestead/ba-cfx`, `@homestead/ba-tebex`, and `@homestead/ba-testbed`.
+- [ ] Replace old first-party package names with `@homestead-systems/ba-plugin-kit`, `@homestead-systems/ba-steam`, `@homestead-systems/ba-cfx`, `@homestead-systems/ba-tebex`, and `@homestead-systems/ba-testbed`.
 - [ ] Replace workspace dependency keys and the root typecheck filter with the new names.
 - [ ] Preserve existing versions, scripts, repository URLs, author metadata, and unrelated dependencies.
 
@@ -35,7 +35,7 @@
 - Modify: `apps/testbed/test-support/plugins.ts`
 - Modify: affected files under `apps/testbed/tests/` and `packages/`
 
-- [ ] Replace old package imports and subpath imports with the matching `@homestead/ba-*` names.
+- [ ] Replace old package imports and subpath imports with the matching `@homestead-systems/ba-*` names.
 - [ ] Update TypeScript path aliases and Vite aliases to point at the existing source directories.
 - [ ] Keep runtime behavior and export paths unchanged.
 
@@ -50,7 +50,7 @@
 - Modify: `templates/plugin/package.json.tpl`
 - Modify: `templates/plugin/src/index.test.ts.tpl`
 
-- [ ] Generate package names as `@homestead/ba-${options.name}`.
+- [ ] Generate package names as `@homestead-systems/ba-${options.name}`.
 - [ ] Update generator expectations, package checker fixtures, and template imports to the new private plugin-kit name.
 - [ ] Retain the generator's lowercase kebab-case validation and file rendering behavior.
 

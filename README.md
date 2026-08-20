@@ -10,15 +10,15 @@ Homestead's collection of focused, independently versioned plugins for
 
 ## Packages
 
-| Package                    | Status                    | Description                    |
-| -------------------------- | ------------------------- | ------------------------------ |
-| `@homestead/ba-steam`      | Private release candidate | Steam account authentication   |
-| `@homestead/ba-cfx`        | Private release candidate | Cfx.re account authentication  |
-| `@homestead/ba-tebex`      | Private release candidate | Tebex billing and entitlements |
-| `@homestead/ba-plugin-kit` | Private, unpublished      | Shared Bun-native test helpers |
+| Package                            | Status                    | Description                    |
+| ---------------------------------- | ------------------------- | ------------------------------ |
+| `@homestead-systems/ba-steam`      | Public package            | Steam account authentication   |
+| `@homestead-systems/ba-cfx`        | Public package            | Cfx.re account authentication  |
+| `@homestead-systems/ba-tebex`      | Private release candidate | Tebex billing and entitlements |
+| `@homestead-systems/ba-plugin-kit` | Private, unpublished      | Shared Bun-native test helpers |
 
-Steam, Cfx.re, and Tebex contain their provider implementations but remain intentionally private
-until their first live provider-flow verification and release review are complete.
+Steam and Cfx.re contain their provider implementations and are published, while Tebex remains
+private until its first live provider-flow verification and release review are complete.
 
 ## Requirements
 

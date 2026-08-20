@@ -6,7 +6,7 @@ body:
     id: package
     attributes:
       label: Package or area
-      placeholder: "@homestead/ba-steam"
+      placeholder: "@homestead-systems/ba-steam"
     validations:
       required: true
 

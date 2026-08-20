@@ -6,15 +6,15 @@ Establish the first-release package and maintainer identity for the Homestead Be
 
 ## Decisions
 
-- Use the `@homestead/ba-*` npm namespace for all first-party workspace packages.
+- Use the `@homestead-systems/ba-*` npm namespace for all first-party workspace packages.
 - Rename the publishable packages to:
-  - `@homestead/ba-steam`
-  - `@homestead/ba-cfx`
-  - `@homestead/ba-tebex`
+  - `@homestead-systems/ba-steam`
+  - `@homestead-systems/ba-cfx`
+  - `@homestead-systems/ba-tebex`
 - Rename private workspace packages consistently:
-  - `@homestead/ba-plugin-kit`
-  - `@homestead/ba-testbed`
-- Make the plugin generator produce `@homestead/ba-${name}` package names.
+  - `@homestead-systems/ba-plugin-kit`
+  - `@homestead-systems/ba-testbed`
+- Make the plugin generator produce `@homestead-systems/ba-${name}` package names.
 - Update all first-party imports, workspace dependencies, TypeScript paths, Vite aliases, test fixtures, templates, READMEs, changelogs, release guidance, and design specifications.
 - Use `Homestead Systems <dabz@homestead.systems>` for package author metadata.
 - Use `support@homestead.systems` for support and security contact text.

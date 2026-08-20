@@ -1,5 +1,5 @@
 {
-  "name": "@homestead/ba-testbed",
+  "name": "@homestead-systems/ba-testbed",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -14,9 +14,9 @@
     "typecheck": "tsc --noEmit -p tsconfig.json"
   },
   "dependencies": {
-    "@homestead/ba-cfx": "workspace:*",
-    "@homestead/ba-steam": "workspace:*",
-    "@homestead/ba-tebex": "workspace:*",
+    "@homestead-systems/ba-cfx": "workspace:*",
+    "@homestead-systems/ba-steam": "workspace:*",
+    "@homestead-systems/ba-tebex": "workspace:*",
     "@tanstack/react-router": "1.170.27",
     "@tanstack/react-start": "1.168.46",
     "better-auth": "1.6.26",

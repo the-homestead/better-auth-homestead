@@ -7,8 +7,8 @@ body:
     attributes:
       label: Package
       options:
-        - "@homestead/ba-steam"
-        - "@homestead/ba-cfx"
+        - "@homestead-systems/ba-steam"
+        - "@homestead-systems/ba-cfx"
         - Repository tooling
         - Another package
     validations:

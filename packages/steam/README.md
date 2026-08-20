@@ -1,16 +1,15 @@
-# @homestead/ba-steam
+# @homestead-systems/ba-steam
 
 Steam OpenID sign-in, account linking, and profile synchronization for Better Auth.
 
 > [!IMPORTANT]
-> This package is still private while its first live Steam flow is verified and release metadata is
-> prepared. It is not available from npm yet.
+> This package is published under the `@homestead-systems` scope.
 
 ## Server setup
 
 ```ts
 import { betterAuth } from "better-auth";
-import { steam } from "@homestead/ba-steam";
+import { steam } from "@homestead-systems/ba-steam";
 
 export const auth = betterAuth({
   trustedOrigins: ["https://app.example.com"],
@@ -31,7 +30,7 @@ it.
 
 ```ts
 import { createAuthClient } from "better-auth/client";
-import { steamClient } from "@homestead/ba-steam/client";
+import { steamClient } from "@homestead-systems/ba-steam/client";
 
 export const authClient = createAuthClient({
   plugins: [steamClient()],

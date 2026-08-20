@@ -20,12 +20,12 @@
       },
     },
     "apps/testbed": {
-      "name": "@homestead/ba-testbed",
+      "name": "@homestead-systems/ba-testbed",
       "version": "0.0.0",
       "dependencies": {
-        "@homestead/ba-cfx": "workspace:*",
-        "@homestead/ba-steam": "workspace:*",
-        "@homestead/ba-tebex": "workspace:*",
+        "@homestead-systems/ba-cfx": "workspace:*",
+        "@homestead-systems/ba-steam": "workspace:*",
+        "@homestead-systems/ba-tebex": "workspace:*",
         "@tanstack/react-router": "1.170.27",
         "@tanstack/react-start": "1.168.46",
         "better-auth": "1.6.26",
@@ -44,46 +44,46 @@
       },
     },
     "packages/cfx": {
-      "name": "@homestead/ba-cfx",
+      "name": "@homestead-systems/ba-cfx",
       "version": "0.0.0",
       "dependencies": {
         "zod": "^4.3.6",
       },
       "devDependencies": {
-        "@homestead/ba-plugin-kit": "workspace:*",
+        "@homestead-systems/ba-plugin-kit": "workspace:*",
       },
       "peerDependencies": {
         "better-auth": ">=1.6.0 <2",
       },
     },
     "packages/plugin-kit": {
-      "name": "@homestead/ba-plugin-kit",
+      "name": "@homestead-systems/ba-plugin-kit",
       "version": "0.0.0",
       "dependencies": {
         "better-auth": "1.6.26",
       },
     },
     "packages/steam": {
-      "name": "@homestead/ba-steam",
+      "name": "@homestead-systems/ba-steam",
       "version": "0.0.0",
       "dependencies": {
         "zod": "^4.3.6",
       },
       "devDependencies": {
-        "@homestead/ba-plugin-kit": "workspace:*",
+        "@homestead-systems/ba-plugin-kit": "workspace:*",
       },
       "peerDependencies": {
         "better-auth": ">=1.6.0 <2",
       },
     },
     "packages/tebex": {
-      "name": "@homestead/ba-tebex",
+      "name": "@homestead-systems/ba-tebex",
       "version": "0.0.0",
       "dependencies": {
         "zod": "^4.3.6",
       },
       "devDependencies": {
-        "@homestead/ba-plugin-kit": "workspace:*",
+        "@homestead-systems/ba-plugin-kit": "workspace:*",
       },
       "peerDependencies": {
         "better-auth": ">=1.6.0 <2",
@@ -221,15 +221,15 @@
 
     "@happy-dom/global-registrator": ["@happy-dom/global-registrator@20.11.2", "", { "dependencies": { "@types/node": ">=20.0.0", "happy-dom": "^20.11.2" } }, "sha512-7fkpoXZWzyxaBkzRtlD0wRU5ckxbNT4j6BywzpSYh+SFPsGxEVmNR9KHaMwM2xkHB0pADQLl4Z8DSrztECJ7Ww=="],
 
-    "@homestead/ba-cfx": ["@homestead/ba-cfx@workspace:packages/cfx"],
+    "@homestead-systems/ba-cfx": ["@homestead-systems/ba-cfx@workspace:packages/cfx"],
 
-    "@homestead/ba-plugin-kit": ["@homestead/ba-plugin-kit@workspace:packages/plugin-kit"],
+    "@homestead-systems/ba-plugin-kit": ["@homestead-systems/ba-plugin-kit@workspace:packages/plugin-kit"],
 
-    "@homestead/ba-steam": ["@homestead/ba-steam@workspace:packages/steam"],
+    "@homestead-systems/ba-steam": ["@homestead-systems/ba-steam@workspace:packages/steam"],
 
-    "@homestead/ba-tebex": ["@homestead/ba-tebex@workspace:packages/tebex"],
+    "@homestead-systems/ba-tebex": ["@homestead-systems/ba-tebex@workspace:packages/tebex"],
 
-    "@homestead/ba-testbed": ["@homestead/ba-testbed@workspace:apps/testbed"],
+    "@homestead-systems/ba-testbed": ["@homestead-systems/ba-testbed@workspace:apps/testbed"],
 
     "@jridgewell/gen-mapping": ["@jridgewell/gen-mapping@0.3.13", "", { "dependencies": { "@jridgewell/sourcemap-codec": "^1.5.0", "@jridgewell/trace-mapping": "^0.3.24" } }, "sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA=="],
 

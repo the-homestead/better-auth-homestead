@@ -35,7 +35,7 @@ describe("validatePackage", () => {
       "dist/index.d.ts": "export declare function plugin(): unknown;\n",
       "dist/index.js": "export function plugin() {}\n",
       "package.json": JSON.stringify({
-        name: "@homestead/ba-example",
+        name: "@homestead-systems/ba-example",
         version: "0.0.0",
         private: true,
         author: "Homestead Systems <dabz@homestead.systems>",
@@ -54,7 +54,7 @@ describe("validatePackage", () => {
     const packageDir = await createPackage({
       "dist/index.test.js": "throw new Error('leaked');\n",
       "package.json": JSON.stringify({
-        name: "@homestead/ba-example",
+        name: "@homestead-systems/ba-example",
         private: true,
         files: ["dist"],
         exports: { ".": { types: "./dist/index.d.ts", import: "./dist/index.js" } },
@@ -74,7 +74,7 @@ describe("validatePackage", () => {
       "dist/index.d.ts": "export {};\n",
       "dist/index.js": "export {};\n",
       "package.json": JSON.stringify({
-        name: "@homestead/ba-example",
+        name: "@homestead-systems/ba-example",
         private: true,
         exports: {
           ".": { types: "./dist/index.d.ts", import: "./dist/index.js" },

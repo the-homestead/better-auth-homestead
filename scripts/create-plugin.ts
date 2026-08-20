@@ -86,7 +86,7 @@ export async function createPlugin(options: CreatePluginOptions): Promise<Create
     PLUGIN_DISPLAY_NAME: displayName,
     PLUGIN_FUNCTION_NAME: toFunctionName(options.name),
     PLUGIN_NAME: options.name,
-    PLUGIN_PACKAGE_NAME: `@homestead/ba-${options.name}`,
+    PLUGIN_PACKAGE_NAME: `@homestead-systems/ba-${options.name}`,
   } as const;
   const templateFiles = await listTemplateFiles(templateDir);
   const renderedFiles = await Promise.all(

@@ -1,4 +1,4 @@
-# @homestead/ba-tebex
+# @homestead-systems/ba-tebex
 
 ## 0.0.0
 
