@@ -27,9 +27,9 @@ token fallback is no longer wanted.
 ## First package release
 
 An unpublished npm package cannot always have trust configured in advance. Create a granular npm
-token limited to the intended package scope, store it as the `NPM_TOKEN` Actions secret, publish the
-first Changesets release, configure trusted publishing on npm, then remove or rotate the bootstrap
-token.
+token limited to the intended package scope and store it as the `NPM_TOKEN` Actions secret. The
+release workflow publishes missing public packages from Ubuntu with provenance, after which you can
+configure npm trusted publishing for each package and remove or rotate the bootstrap token.
 
 ## Manual fallback
 
@@ -41,4 +41,6 @@ bun run publish:manual
 
 The guard rejects other branches and dirty working trees, runs the complete validation pipeline,
 checks the active npm identity, and only then invokes `changeset publish`. It never versions packages;
-run `bun run version-packages` and review those changes first when handling a release manually.
+run `bun run version-packages` and review those changes first when handling a release manually. On
+Windows, npm cannot generate provenance locally; use the GitHub Actions workflow for any publication
+that must carry npm provenance.

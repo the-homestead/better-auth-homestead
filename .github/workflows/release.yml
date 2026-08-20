@@ -63,6 +63,16 @@ jobs:
       - name: Build packages
         run: bun run build
 
+      - name: Publish packages missing from npm
+        shell: bash
+        run: |
+          for package_dir in packages/cfx packages/steam; do
+            package_name=$(node -p "require('./${package_dir}/package.json').name")
+            if ! npm view "$package_name" version >/dev/null 2>&1; then
+              npm publish "./${package_dir}" --access public --provenance
+            fi
+          done
+
       - name: Create release pull request or publish
         uses: changesets/action@198f833dd7d863100ea6e28967bc9a9fdefadb0a # v2.1.0
         with:
